@@ -1,0 +1,88 @@
+-----------------------------------Implementation of Persistent Data Structures--------------------------------------------------------------
+
+Part of IISc E0 251 DSA course
+Developed towards the fulfilment of Assignment 4 of the mentioned course
+
+Developed by: Hari Shrawgi
+
+Language: C
+Libraries Used (C): stdlib, stdio
+
+-----------------------------------Implementation of Dynamic Memory Allocators--------------------------------------------------------------
+
+1. Basic Introduction
+----------------------
+
+All the src code has been written to implement various persistent data structres and also an application of the same.
+
+Following data structures have been developed with partial persistence:
+  - Singly Linked List
+  - Doubly Linked List
+  - Circular Linked List
+  - Stack
+  - Queue
+  - Double Ended Queue
+
+Binary Search tree data structure has fully functional partial persistence, but it has been created for full persistence.
+The code for full persistence is there, but not fully functional (lack fo time).
+
+Rope data structre has also been developed and a working simple text editor has been created to demosntrate it's use.
+
+2. Salient Features
+--------------------
+
+- All the partially persistent data structures have been developed using the "best" method
+  The method used is the Tarjan hybrid method to achieve persistence.
+- Also implemented Garbage Collection for some of the partially persistent data structures
+- The BST developed is almost fully persistent, but for now the program has been restricted to
+  partial persistence, so that everything runs gracefully.
+- The application has been able to achieve everything that has been advertized in the proposal
+- There is proper reuse of the developed code ineternally. For example, stack, queue and DEqueue, all use
+  the various linked list data structures developed as part of the assignment
+- The partially persistent part is especially very abstract and portable
+- The different modules are very loosely coupled
+
+3. Code description
+--------------------
+
+The src code is divided into three components:
+
+A. Partially Persistent:
+
+This is the part that has implementations of all the partially persistent data structures.
+
+The code has a lot of dependencies ineternally, as there is a lot of reuse. All these are
+covered in the makefile.
+
+There is a single main file, which can be used to test all the 6 data structures.
+
+B. Fully Persistent:
+
+This is the part that has teh BST Implementation.
+The implementation supports partial persistence completely.
+
+Regarding, full persistence, the code is there. The only missing part is linearized version list.
+This was not done due to lack of time, but can be easily added. And this would allow the implementation
+to support full persistence as well.
+
+There is a single main file, which can be used to test the implementation.
+
+C. Applciation:
+
+This part deals with the Rope data structure and also the simple text-editor applciation which uses Rope.
+
+The text-editor is a prototype which supports all the operations of a simple text-editor. It is a menu-driven
+editor which allows you to:
+  - append strings
+  - Undo (upto any level)
+  - print the text
+  - print text of any previous version (basically to see how much to undo)
+
+The text-editor program can be tested using the makefile and running the program.
+
+5. Testing
+----------
+
+Performing testing is simple. Just use the corresponding makefiles and then run the program.
+
+------------------------------------------------------X---------------------------------------------x------------------------------------------
